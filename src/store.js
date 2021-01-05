@@ -1,6 +1,7 @@
+import {observable} from 'mobx'
+
 export default class RootStore {
 
-    constructor() {
-        
-    }
+    @observable
+    loading = false
 }
