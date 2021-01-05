@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'mobx-react'
+import RootStore from './store'
 import App from './App';
 import './index.css';
 
+const rootStore = new RootStore()
 ReactDOM.render(
   <React.StrictMode>
+    <Provider rootStore={rootStore}>
     <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

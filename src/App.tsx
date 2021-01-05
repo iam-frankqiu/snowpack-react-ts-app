@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
+import { observer } from "mobx-react-lite";
+import { inject } from "mobx-react";
 import './App.css';
 
 interface AppProps {}
@@ -38,4 +40,4 @@ function App({}: AppProps) {
   );
 }
 
-export default App;
+export default inject("rootStore")(observer(App));
