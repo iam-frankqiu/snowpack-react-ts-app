@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import { observer } from "mobx-react-lite";
 import { inject } from "mobx-react";
-import {download} from './utils'
+import {saveAs} from 'file-saver'
 import './App.css';
 
 interface AppProps {}
@@ -12,8 +12,7 @@ function App({}: AppProps) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    download('')
-
+    console.log(typeof saveAs)
   }, [])
   // Create the counter (+1 every second).
   useEffect(() => {
