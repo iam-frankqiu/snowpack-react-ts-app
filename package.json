@@ -4,7 +4,8 @@
     "build": "snowpack build",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
+    "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
+    "esbuild": "esbuild FileSaver.js --bundle --format=esm --outfile=esmFileSaver.js"
   },
   "dependencies": {
     "react": "^17.0.0",
