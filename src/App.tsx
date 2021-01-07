@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import { observer } from "mobx-react-lite";
 import { inject } from "mobx-react";
+import {download} from './utils'
 import './App.css';
 
 interface AppProps {}
@@ -9,6 +10,11 @@ interface AppProps {}
 function App({}: AppProps) {
   // Create the count state.
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    download('')
+
+  }, [])
   // Create the counter (+1 every second).
   useEffect(() => {
     const timer = setTimeout(() => setCount(count + 1), 1000);
