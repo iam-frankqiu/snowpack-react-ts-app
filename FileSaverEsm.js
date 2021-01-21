@@ -1,3 +1,8 @@
+function createCommonjsModule(fn) {
+  var module = { exports: {} };
+	return fn(module, module.exports), module.exports;
+}
+
 /*
 * FileSaver.js
 * A saveAs() FileSaver implementation.
@@ -8,6 +13,7 @@
 * source  : http://purl.eligrey.com/github/FileSaver.js
 */
 
+var FileSaver = createCommonjsModule(function (module) {
 // The one and only way of getting global scope in all environments
 // https://stackoverflow.com/q/3277182/1008999
 // var _global = typeof window === 'object' && window.window === window
@@ -167,6 +173,9 @@ var saveAs = _global.saveAs || (
 
 _global.saveAs = saveAs.saveAs = saveAs;
 
-if (typeof module !== 'undefined') {
+{
   module.exports = saveAs;
 }
+});
+
+export default FileSaver;
